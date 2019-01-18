@@ -9,6 +9,7 @@ struct Student
 };
 int index = 0;
 struct Student arr[1000];
+int sum = 0;
 
 int main()
 {
@@ -77,7 +78,7 @@ int main()
 
             for (int i = 0; i < index; i++)
             {
-                printf("第%d个学生%s的语文成绩为:%d数学成绩为:%d英语成绩为:%d\n", i + 1,arr[i].name,arr[i].yw, arr[i].sx, arr[i].yy);
+                printf("第%d个学生%s的语文成绩为:%d 数学成绩为:%d 英语成绩为:%d\n", i + 1, arr[i].name, arr[i].yw, arr[i].sx, arr[i].yy);
             }
             printf("显示成功，点击回车继续\n");
             char x;
@@ -87,6 +88,22 @@ int main()
 
         if (code == 4)
         {
+            
+            printf("所有总分不及格的学生如下：\n");
+
+            for (int i = 0; i < index; i++)
+            {
+             sum = arr[i].yw + arr[i].sx + arr[i].yy;
+             if (sum < 180)
+            {
+                printf("第%d名学生%s的成绩不及格：\n", i + 1, arr[i].name);
+            }
+            }
+            
+            printf("筛选成功，点击回车继续\n");
+            char x;
+            scanf("%c", &x);
+            scanf("%c", &x);
         }
 
         if (code == 5)
