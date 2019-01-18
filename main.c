@@ -24,7 +24,7 @@ int main()
         printf("4 -- 业务1：所有总分不及格的学生\n");
         printf("5 -- 业务2：每一科都不及格的学生\n");
         printf("6 -- 业务3：显示总分最高的学生\n");
-        printf("7 -- 业务4：显示平均分最高\n");
+        printf("7 -- 业务4：显示平均分最高,且没有不及格的\n");
         printf("8 -- 退出程序\n");
 
         printf("请输入功能编号\n");
@@ -129,7 +129,7 @@ int main()
             printf("总分最高的学生为\n");
 
             int max = 0;
-            int  id;
+            int id;
 
             for (int i = 0; i < index; i++)
             {
@@ -137,7 +137,7 @@ int main()
                 if (max < l)
                 {
                     max = l;
-                    id=i;
+                    id = i;
                 }
             }
             printf("第%d名同学%s的总分最高，最高分为%d\n", id, arr[id].name, max);
@@ -150,13 +150,29 @@ int main()
 
         if (code == 7)
         {
-            printf("平均分最高为\n");
-            
-            for(int i = 0; i < index; i++)
+            double max = 0;
+            int d;
+
+            printf("平均分最高且没有不及格的为\n");
+
+            for (int i = 0; i < index; i++)
             {
-                
+                if (arr[i].yw >= 60 && arr[i].sx >= 60 && arr[i].yy >= 60)
+                {
+                    double pj = (arr[i].yw + arr[i].sx + arr[i].yy) / 3.0;
+                    if (max < pj)
+                    {
+                        max = pj;
+                        d = i;
+                    }
+                }
             }
-            
+            printf("%s同学的平均分最高且没有不及格的科目\n",arr[d].name);
+
+            printf("筛选成功，点击回车继续\n");
+            char x;
+            scanf("%c", &x);
+            scanf("%c", &x);
         }
 
         if (code == 8)
