@@ -88,18 +88,18 @@ int main()
 
         if (code == 4)
         {
-            
+
             printf("所有总分不及格的学生如下：\n");
 
             for (int i = 0; i < index; i++)
             {
-             sum = arr[i].yw + arr[i].sx + arr[i].yy;
-             if (sum < 180)
-            {
-                printf("第%d名学生%s的成绩不及格：\n", i + 1, arr[i].name);
+                sum = arr[i].yw + arr[i].sx + arr[i].yy;
+                if (sum < 180)
+                {
+                    printf("第%d名学生%s的成绩不及格,分数为%d：\n", i + 1, arr[i].name,sum);
+                }
             }
-            }
-            
+
             printf("筛选成功，点击回车继续\n");
             char x;
             scanf("%c", &x);
@@ -108,6 +108,19 @@ int main()
 
         if (code == 5)
         {
+            printf("每一科都不及格的学生如下\n");
+
+            for (int i = 0; i < index; i++)
+            {
+                if ((arr[i].yw < 60) && (arr[i].sx < 60) && (arr[i].yy < 60))
+                {
+                    printf("第%d名学生%s每一科都不及格\n", i + 1, arr[i].name);
+                }
+            }
+            printf("筛选成功，点击回车继续\n");
+            char x;
+            scanf("%c", &x);
+            scanf("%c", &x);
         }
 
         if (code == 6)
