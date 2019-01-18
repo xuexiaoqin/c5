@@ -31,6 +31,23 @@ int main()
 
         if (code == 1)
         {
+            printf("输入学生姓名\n");
+            scanf("%s",(arr[index].name));
+
+            printf("输入学生语文成绩\n");
+            scanf("%d",&(arr[index].yw));
+            
+            printf("输入学生数学成绩\n");
+            scanf("%d",&(arr[index].sx));
+
+            printf("输入学生英语成绩\n");
+            scanf("%d",&(arr[index].yy));
+
+            index++;
+            printf("添加成功，点击回车继续\n");
+            char x;
+            scanf("%c",&x);
+            scanf("%c",&x);
         }
 
          if (code == 2)
