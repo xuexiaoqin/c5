@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 struct Student
 {
@@ -96,7 +97,7 @@ int main()
                 sum = arr[i].yw + arr[i].sx + arr[i].yy;
                 if (sum < 180)
                 {
-                    printf("第%d名学生%s的成绩不及格,分数为%d：\n", i + 1, arr[i].name,sum);
+                    printf("第%d名学生%s的成绩不及格,分数为%d：\n", i + 1, arr[i].name, sum);
                 }
             }
 
@@ -125,10 +126,37 @@ int main()
 
         if (code == 6)
         {
+            printf("总分最高的学生为\n");
+
+            int max = 0;
+            int  id;
+
+            for (int i = 0; i < index; i++)
+            {
+                int l = arr[i].yw + arr[i].sx + arr[i].yy;
+                if (max < l)
+                {
+                    max = l;
+                    id=i;
+                }
+            }
+            printf("第%d名同学%s的总分最高，最高分为%d\n", id, arr[id].name, max);
+
+            printf("筛选成功，点击回车继续\n");
+            char x;
+            scanf("%c", &x);
+            scanf("%c", &x);
         }
 
         if (code == 7)
         {
+            printf("平均分最高为\n");
+            
+            for(int i = 0; i < index; i++)
+            {
+                
+            }
+            
         }
 
         if (code == 8)
